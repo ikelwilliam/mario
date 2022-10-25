@@ -1,0 +1,86 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	flex-direction: column;
+	background: linear-gradient(45deg,#000,#00b5ff,#19faf8,#000);
+}
+h2{
+	margin-bottom: 30px;
+	font-size: 2.5em;
+}
+.kotak{
+	position: relative;
+	width: 600px;
+	height: 200px;
+	border-bottom: 3px solid #555;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.kotak label{
+	position: relative;
+	width: 100%;
+	height: 33.338%;
+	border: 3px solid #555;
+	border-bottom: none;
+}
+.kotak label input{
+	position: absolute;
+	appearance: none;
+	z-index: 10;
+}
+.kotak label i{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-size: 600px;
+}
+.kotak label:nth-child(1) i{
+	background-image: url(1.jpg);
+	animation: animasi 0.5s steps(3) infinite;
+}
+.kotak label:nth-child(2) i{
+	background-image: url(2.jpg);
+	animation: animasi 0.4s steps(3) infinite;
+}
+.kotak label:nth-child(3) i{
+	background-image: url(3.jpg);
+	animation: animasi 0.7s steps(3) infinite;
+}
+@keyframes animasi
+{
+	0%
+	{
+		background-position: 0px;
+	}
+	100%
+	{
+		background-position: 600px;
+	}
+}
+.kotak label input:checked ~ i
+{
+	animation-play-state: paused;
+}
+.reset{
+	margin-top: 40px;
+	border: none;
+	font-size: 1.25em;
+	padding: 10px 25px;
+	background: #333;
+	color: #fff;
+}
+.reset:active{
+	background: #d63c3c;
+	transform: scale(0.95);
+}
